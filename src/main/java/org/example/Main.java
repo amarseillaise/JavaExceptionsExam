@@ -1,7 +1,7 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.Stack;
 
 public class Main {
     public static void main (String[] args) {
@@ -13,10 +13,7 @@ public class Main {
                 Пол латиницей f или m""");
 
         Scanner scanner = new Scanner(System.in);
-        CheckString check = new CheckString();
-
-        String[] input = scanner.nextLine().split(" ");
-        if (check.checkString(input)) System.out.println("Да");
-        else System.out.println("Нет");
+        ArrayList<String> dataset = new HandlerString(scanner.nextLine().split(" ")).getOrderString();
+        new WriterToFile(dataset);
     }
 }
